@@ -43,16 +43,20 @@
     <div class="inputs">
       <div class="input">
         <label for="top-left">top-left</label>
-        <input type="text" id="top-left" name="top-left" tabindex="1" />
+        <input
+          type="text"
+          id="top-left"
+          name="top-left"
+          tabindex="1"
+          value="15"
+        />
       </div>
       <div class="input">
         <label for="top-right">top-right</label>
         <input type="text" id="top-right" name="top-right" tabindex="2" />
       </div>
     </div>
-    <div class="shape">
-      <button>Run</button>
-    </div>
+    <div class="shape"></div>
     <div class="inputs">
       <div class="input">
         <input type="text" id="bottom-left" name="bottom-left" tabindex="3" />
@@ -63,6 +67,8 @@
         <label for="bottom-right">bottom-right</label>
       </div>
     </div>
+
+    <input type="text" name="copyInput" id="copyInput" />
 
     <script src="./scripts.js"></script>
   </body>

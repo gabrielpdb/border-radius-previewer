@@ -57,3 +57,7 @@ input {
   line-height: 1rem;
   text-align: center;
 }
+
+input#copyInput {
+  width: 60%;
+}
