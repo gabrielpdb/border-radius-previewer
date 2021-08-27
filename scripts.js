@@ -2,7 +2,6 @@ const shape = document.querySelector('.shape')
 const copyInput = document.querySelector('#copyInput')
 const inputsNL = document.querySelectorAll('input')
 const inputs = Array.from(inputsNL)
-console.log(inputs[0].value)
 
 function getUnity() {
   return document.querySelector('select#unit').value
@@ -21,15 +20,23 @@ function inputCode() {
       inputs[0].value != 0 ? inputs[0].value + getUnity() + ', ' : '0, '
     } ${inputs[1].value != 0 ? inputs[1].value + getUnity() + ', ' : '0, '} ${
     inputs[2].value != 0 ? inputs[2].value + getUnity() + ', ' : '0, '
-  } ${inputs[3].value != 0 ? inputs[3].value + getUnity() + ', ' : '0;'}
+  } ${inputs[3].value != 0 ? inputs[3].value + getUnity() + ';' : '0;'}
   `
 
   copyInput.value = code
 }
 
+function run() {
+  updateValues()
+  inputCode()
+}
+
+function copyToClipboard() {
+  navigator.clipboard.writeText(copyInput.value)
+}
+
 document.addEventListener('keydown', event => {
   if (event.key == 'Enter') {
-    updateValues()
-    inputCode()
+    run()
   }
 })

@@ -6,69 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Border Radius Previwer</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <h1>CSS Border Radius Previewer</h1>
-      <p>Please choose a unity to aply CSS Border Radius Property</p>
-      <select
-        name="unit"
-        id="unit"
-        tabindex="0"
-        class="input"
-        onclick="updateValues()"
-      >
-        <optgroup label="Principals">
-          <option value="px">px</option>
-          <option value="%">%</option>
-          <option value="vw">vw</option>
-          <option value="vh">vh</option>
-          <option value="pt">pt</option>
-          <option value="em">em</option>
-          <option value="rem">rem</option>
-        </optgroup>
-        <optgroup label="Others">
-          <option value="cm">px</option>
-          <option value="mm">em</option>
-          <option value="in">rem</option>
-          <option value="pt">%</option>
-          <option value="pc">%</option>
-          <option value="ex">%</option>
-          <option value="ch">%</option>
-          <option value="vmin">%</option>
-          <option value="vmax">%</option>
-        </optgroup>
-      </select>
-    </header>
-    <div class="inputs">
-      <div class="input">
-        <label for="top-left">top-left</label>
+    <div class="container">
+      <header>
+        <h1>CSS Border Radius Previewer</h1>
+        <p>Please choose an unity to apply CSS Border Radius Property</p>
+        <label for="unit">Unity</label>
+        <select
+          name="unit"
+          id="unit"
+          tabindex="0"
+          class="input"
+          onclick="run()"
+        >
+          <optgroup label="Principals">
+            <option value="px">px</option>
+            <option value="%">%</option>
+            <option value="vw">vw</option>
+            <option value="vh">vh</option>
+            <option value="pt">pt</option>
+            <option value="em">em</option>
+            <option value="rem">rem</option>
+          </optgroup>
+          <optgroup label="Others">
+            <option value="cm">cm</option>
+            <option value="mm">nn</option>
+            <option value="in">in</option>
+            <option value="pt">pt</option>
+            <option value="pc">pc</option>
+            <option value="ex">ex</option>
+            <option value="ch">ch</option>
+            <option value="vmin">vmin</option>
+            <option value="vmax">vmax</option>
+          </optgroup>
+        </select>
+      </header>
+      <div class="inputs">
+        <div class="input">
+          <label for="top-left">top-left</label>
+          <input
+            type="number"
+            id="top-left"
+            name="top-left"
+            tabindex="1"
+            oninput="run()"
+            placeholder="top-left"
+          />
+        </div>
+        <div class="input">
+          <label for="top-right">top-right</label>
+          <input
+            type="number"
+            id="top-right"
+            name="top-right"
+            tabindex="2"
+            oninput="run()"
+            placeholder="top-right"
+          />
+        </div>
+      </div>
+      <div class="shape"></div>
+      <div class="inputs">
+        <div class="input">
+          <input
+            type="number"
+            id="bottom-left"
+            name="bottom-left"
+            tabindex="3"
+            oninput="run()"
+            placeholder="bottom-left"
+          />
+          <label for="bottom-left">bottom-left</label>
+        </div>
+        <div class="input">
+          <input
+            type="number"
+            id="bottom-right"
+            name="bottom-right"
+            tabindex="4"
+            oninput="run()"
+            placeholder="bottom-right"
+          />
+          <label for="bottom-right">bottom-right</label>
+        </div>
+      </div>
+
+      <div class="clipboard">
         <input
           type="text"
-          id="top-left"
-          name="top-left"
-          tabindex="1"
-          value="15"
+          name="copyInput"
+          id="copyInput"
+          placeholder="clipboard"
+          readonly
         />
-      </div>
-      <div class="input">
-        <label for="top-right">top-right</label>
-        <input type="text" id="top-right" name="top-right" tabindex="2" />
-      </div>
-    </div>
-    <div class="shape"></div>
-    <div class="inputs">
-      <div class="input">
-        <input type="text" id="bottom-left" name="bottom-left" tabindex="3" />
-        <label for="bottom-left">bottom-left</label>
-      </div>
-      <div class="input">
-        <input type="text" id="bottom-right" name="bottom-right" tabindex="4" />
-        <label for="bottom-right">bottom-right</label>
+        <button class="material-icons" onclick="copyToClipboard()">
+          assignment
+        </button>
       </div>
     </div>
-
-    <input type="text" name="copyInput" id="copyInput" />
 
     <script src="./scripts.js"></script>
   </body>

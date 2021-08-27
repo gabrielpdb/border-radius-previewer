@@ -19,6 +19,13 @@ body {
   gap: 2rem;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -27,10 +34,20 @@ header {
   gap: 1rem;
 }
 
+select {
+  width: 4rem;
+  height: 2rem;
+  border-bottom: 1px solid black;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  outline: none;
+}
+
 .shape {
   width: 30vw;
   height: 30vh;
-  background: rgb(20, 131, 103);
+  background: rgb(12, 167, 32);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,15 +66,35 @@ header {
   gap: 1rem;
 }
 
+label {
+  display: none;
+}
+
 input {
   width: 8rem;
   height: 2rem;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   font-size: 1rem;
   line-height: 1rem;
   text-align: center;
+  outline: none;
+}
+
+.clipboard {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 input#copyInput {
-  width: 60%;
+  width: 80%;
+}
+
+.clipboard button {
+  border: 1px solid;
+  border-radius: 2px;
+  cursor: pointer;
 }
